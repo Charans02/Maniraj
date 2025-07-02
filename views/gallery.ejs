@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Journey Together</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/styles.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body style="
+  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+">
+
+  <img src="/images/heart-border.png" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+  ">
+
+  <img src="/images/heart-border.png" style="
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    transform: scaleX(-1);
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+  ">
+
+  <img src="/images/heart-border.png" style="
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    transform: scaleX(-1);
+    transform: scaleY(-1);
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+  ">
+
+  <div class="timeline-container">
+    <h2 class="timeline-title">Your Journey of Love</h2>
+    <div class="timeline">
+      <% photos.forEach(function(photo, index){ %>
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-img">
+            <img src="/images/<%= photo.filename %>" alt="Memory <%= index+1 %>">
+          </div>
+          <div class="timeline-content">
+            <p><%= photo.caption %></p>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+    <div class="text-center mt-4">
+      <a href="/" style="
+        display: inline-block;
+        background-color: #ff9999;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        transition: background-color 0.3s ease;
+      "
+      onmouseover="this.style.backgroundColor='#ff6666';"
+      onmouseout="this.style.backgroundColor='#ff9999';">
+        Back to Home
+      </a>
+    </div>
+  </div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+  </script>
+</body>
+</html>
